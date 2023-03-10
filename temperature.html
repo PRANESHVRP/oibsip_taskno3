@@ -1,0 +1,40 @@
+<html>
+<body style="background-color:#eedd82">
+<div style="display:flex;justify-content:center">
+<h1>Celcius To Fahrenheit Converter.</h1>
+</div>
+<div style="display:flex;justify-content:center">
+<h3>Enter The Temperature in Celcius.</h3>
+</div>
+<div style="display:flex;justify-content:center">
+<input  id="temp" type="number"/>
+</div>
+<div style="display:flex;justify-content:center">
+<h3>The Temperature in Fahrenheit.</h3>
+</div>
+<div style="display:flex;justify-content:center;">
+<h3 style="padding:2px;border: 1px solid black;min-width:10rem;display:none" id="result">
+</h3>
+</div>
+</body>
+<script>
+var temp = document.getElementById("temp")
+temp.addEventListener("keyup", (event) => {
+  if (event.isComposing || event.keyCode === 229) {
+    return;
+  }
+if(event.keyCode === 13){
+tempe = parseInt(temp.value)
+if(temp.value === ''){
+alert("Temperature Input Can't be Empty")
+return
+}
+var f = (tempe*1.8)+32
+document.getElementById("result").innerHTML = f
+document.getElementById("result").style.display="block"
+document.getElementById("result").style.backgroundColor="white"
+}
+  // do something
+});
+</script>
+</html>
